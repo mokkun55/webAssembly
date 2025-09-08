@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "emcc reverse.cpp -s EXPORTED_FUNCTIONS='[\"_malloc\", \"_free\", \"_reverse_array\"]' -s EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\", \"HEAP32\"]' -o reverse.js",
+    "build": "emcc reverse.cpp -s EXPORTED_FUNCTIONS='[\"_malloc\", \"_free\", \"_reverse_array\"]' -s EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\", \"HEAP32\"]' -s MODULARIZE=1 -s EXPORT_ES6=1 -s EXPORT_NAME='Module' -o reverse.js",
     "start": "node main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }
